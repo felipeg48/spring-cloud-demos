@@ -13,7 +13,7 @@ It's not necessary to have a `Dockerfile`, the pluging will take care of that.
 +
 [source,shell]
 ----
-./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=demo-config-client:0.0.1
+./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=quay.io/felipeg/demo-config-client:0.0.1
 ----
 
 == OpenShift
