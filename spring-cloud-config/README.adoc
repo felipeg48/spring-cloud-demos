@@ -1,6 +1,6 @@
 = Spring Cloud Demos -  Spring Cloud Config Server/Client
 
-image::images/config-server.png
+image::images/config-server.png[]
 
 Two main projects:
 
