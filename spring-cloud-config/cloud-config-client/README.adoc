@@ -1,0 +1,57 @@
+= Spring Cloud Config Server
+
+== Running
+[source,shell]
+----
+./mvnw spring-boot:run
+----
+
+== Docker Image
+It's not necessary to have a `Dockerfile`, the pluging will take care of that.
+- Local Development and testing
+[source,shell]
+----
+./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=demo-config-client:0.0.1
+----
+
+== OpenShift
+Assuming you have the `spring-cloud-demos` project/namespace.
+
+- Use the `k8s-cloud-config-client.yaml` file to create a new deployment.
++
+[source,shell]
+----
+oc create -f k8s-cloud-config-client.yaml
+----
+- Expose the the `cloud-config-client` as Service using the `k8s-cloud-config-client-service.yaml` file.
++
+[source,shell]
+----
+oc create -f k8s-cloud-config-server-client.yaml
+----
+- Add a route using the `k8s-cloud-config-client-route.yaml` file.
++
+[source,shell]
+----
+oc create -f k8s-cloud-config-server-client-route.yaml
+----
+- Get the URL:
++
+[source,shell]
+----
+oc get route -l app=cloud-config-client
+----
+
+
+== Removing Server and Client
+[source,shell]
+----
+oc delete all -l demo=spring-cloud-config-demo
+----
+
+Or one by one:
+[source,shell]
+----
+oc delete all -l app=cloud-config-client
+oc delete all -l app=cloud-config-server
+----

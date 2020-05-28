@@ -1,0 +1,37 @@
+= Spring Cloud Config Server
+
+== Running
+[source,shell]
+----
+./mvnw spring-boot:run
+----
+
+== Docker Image
+It's not necessary to have a `Dockerfile`, the pluging will take care of that.
+- Local Development and testing
+[source,shell]
+----
+./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=demo-config-server:0.0.1
+----
+
+== OpenShift
+- Creating a Project
++
+[source,shell]
+----
+oc new-project spring-cloud-demos \
+ --description="These are Spring Cloud Demos on OpenShift" \
+ --display-name="spring-cloud-demos"
+----
+- Use the `k8s-cloud-config-server.yaml` file to create a new deployment.
++
+[source,shell]
+----
+oc create -f k8s-cloud-config-server.yaml
+----
+- Expose the the `cloud-config-server` as Service using the `k8s-cloud-config-server-service.yaml` file.
++
+[source,shell]
+----
+oc create -f k8s-cloud-config-server-service.yaml
+----

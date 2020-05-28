@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-config-client
+  labels:
+    app: cloud-config-client
+    demo: spring-cloud-config-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloud-config-client
+  template:
+    metadata:
+      labels:
+        app: cloud-config-client
+    spec:
+      containers:
+        - name: cloud-config-client
+          image: quay.io/felipeg/demo-config-client:0.0.1
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: cloud
+            - name: SPRING_CLOUD_CONFIG_URI
+              value: http://cloud-config-server:8888
+          ports:
+            - containerPort: 8080

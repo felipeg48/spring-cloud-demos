@@ -1,0 +1,10 @@
+# Server Config
+spring:
+  application:
+    name: my-app
+---
+spring:
+  profiles: cloud
+  cloud:
+    config:
+      uri: http://cloud-config-server:8888

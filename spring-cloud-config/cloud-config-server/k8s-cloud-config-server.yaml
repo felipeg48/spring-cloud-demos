@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-config-server
+  labels:
+    app: cloud-config-server
+    demo: spring-cloud-config-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloud-config-server
+  template:
+    metadata:
+      labels:
+        app: cloud-config-server
+    spec:
+      containers:
+      - name: cloud-config-server
+        image: quay.io/felipeg/demo-config-server:0.0.1
+        ports:
+        - containerPort: 8888

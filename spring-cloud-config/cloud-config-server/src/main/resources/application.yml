@@ -1,0 +1,11 @@
+# Config Server
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/felipeg48/ibm-cloud-config.git
+
+# Server Port
+server:
+  port: 8888

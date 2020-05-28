@@ -1,0 +1,6 @@
+= Spring Cloud Demos -  Spring Cloud Config Server/Client
+
+Two main projects:
+
+- link:cloud-config-server/[Cloud Config Server]. A simple Spring Cloud App. This apps shows you the usage of the `@EnableConfigServer` annotation. Is necessary to provide a Git Server.
+- link:cloud-config-client/[Cloud Config Client]. A simple Spring Cloud Client. It reaches out for the Config Server and gets ints configuration from the Git Server.

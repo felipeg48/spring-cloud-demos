@@ -1,0 +1,12 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: cloud-config-client-route
+  labels:
+    app: cloud-config-client
+    demo: spring-cloud-config-demo
+spec:
+  to:
+    kind: Service
+    name: cloud-config-client
+    weight: 100
