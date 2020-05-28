@@ -1,0 +1,4 @@
+= Spring Cloud Demos on OpenShift
+
+- link:spring-cloud-config/[Spring Cloud Config]. A Server/Client Deme. It uses a centralized way to expose properties using `Spring Cloud Config Server`.
+
