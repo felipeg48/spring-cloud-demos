@@ -8,7 +8,9 @@ Two main projects:
 
 == Local Deployment
 
-There is already version `0.0.1` of these apps in https://quay.io/repository/[Quay.io]. You can get the images to your local environment with:
+There is already version `0.0.1` of these apps in https://quay.io/repository/[Quay.io].
+
+You can get the images to your local environment with:
 - `docker pull quay.io/felipeg/demo-config-server:0.0.1`
 - `docker pull quay.io/felipeg/demo-config-client:0.0.1`
 
