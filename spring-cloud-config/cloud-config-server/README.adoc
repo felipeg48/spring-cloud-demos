@@ -8,7 +8,9 @@
 
 == Docker Image
 It's not necessary to have a `Dockerfile`, the pluging will take care of that.
+
 - Local Development and testing
++
 [source,shell]
 ----
 ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=demo-config-server:0.0.1
@@ -34,4 +36,10 @@ oc create -f k8s-cloud-config-server.yaml
 [source,shell]
 ----
 oc create -f k8s-cloud-config-server-service.yaml
+----
+
+== Removing Server
+[source,shell]
+----
+oc delete all -l app=cloud-config-server
 ----

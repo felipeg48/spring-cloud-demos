@@ -8,7 +8,9 @@
 
 == Docker Image
 It's not necessary to have a `Dockerfile`, the pluging will take care of that.
+
 - Local Development and testing
++
 [source,shell]
 ----
 ./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=demo-config-client:0.0.1
@@ -43,15 +45,8 @@ oc get route -l app=cloud-config-client
 ----
 
 
-== Removing Server and Client
-[source,shell]
-----
-oc delete all -l demo=spring-cloud-config-demo
-----
-
-Or one by one:
+== Removing Client
 [source,shell]
 ----
 oc delete all -l app=cloud-config-client
-oc delete all -l app=cloud-config-server
 ----
